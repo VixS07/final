@@ -2,10 +2,13 @@ package cpt;
 import java.util.Scanner;
 public class Interaction {
     private Scanner input;
+    private StudentData studentData;
+
 
         public Interaction(Scanner input){
             this.input = input; 
             //I had an issue with the main method creating a new oobject for method using the scanner so I asked AI to help me solve the error
+            this.studentData = new StudentData(); //asked AI to help me with how to acess the StudentData file
         }
 
     public void interact(){
@@ -24,10 +27,13 @@ public class Interaction {
             int choice = input.nextInt(); // Opens input for user
             switch(choice){
                 case 1:
+                StudentData.addStudent(input); //asked AI to help me with how to acess the StudentData file
                 break;
                 case 2:
+                StudentData.addGrade(input);
                 break;
                 case 3:
+                StudentData.displayStudentInfo(input);
                 break;
                 case 4:
                 break;
